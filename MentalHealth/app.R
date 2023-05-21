@@ -17,7 +17,7 @@ library(leaflet)
 #library(rsconnect)
 
 #Load Excel File
-here::i_am("MentalHealth/app.R")
+#here::i_am("MentalHealth/app.R")
 mentalhealth<-read_excel("mental health records.xlsx") %>%  
   clean_names()
 # mentalhealth<-read_excel("D:/Mental Health/mental health records.xlsx") %>%  
