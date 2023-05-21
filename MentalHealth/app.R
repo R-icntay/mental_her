@@ -879,9 +879,10 @@ server <- function(input, output, session) {
   })
   
   
-  output$mymap <- renderLeaflet( {
+  output$mymap <- renderLeaflet({
     
-    leaflet(merged_mh_df) %>% 
+    merged_mh_df %>% st_as_sf() %>% 
+      leaflet() %>% 
       addTiles() %>% 
       addPolygons(color = "blue", weight = 1, dashArray = "3", fillColor = ~pal(mh_totals),
                   highlight= highlightOptions(
